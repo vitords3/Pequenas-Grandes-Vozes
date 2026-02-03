@@ -186,7 +186,81 @@
   display: block;   /* remove espaços extras */
   border-radius: 10px; /* bordas arredondadas do card */
 }
+/* ===== AJUSTES FINOS PARA CELULAR ===== */
+@media (max-width: 768px) {
 
+  section {
+    padding: 20px 12px;
+  }
+
+  .card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .perfil-texto {
+    max-width: 100%;
+  }
+
+  .perfil img {
+    max-width: 200px;
+  }
+
+  /* Imagens grandes dentro do card */
+  .imagem-card {
+    border-radius: 8px;
+  }
+
+  /* BOTÕES DE SERVIÇO */
+  .servicos button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  /* ===== MODAL NO CELULAR ===== */
+  .modal-conteudo {
+    max-width: 95%;
+    padding: 12px;
+  }
+
+  .modal-conteudo h2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .modal-conteudo p {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .banner img {
+    min-height: 140px;
+  }
+
+  .banner-texto {
+    font-size: 12.5px;
+    padding: 6px 10px;
+    line-height: 1.3;
+  }
+
+  .fechar {
+    font-size: 24px;
+  }
+
+}
   </style>
 </head>
 <body>
@@ -281,7 +355,7 @@
     </p>
 
     <p>
-    - Economia relacionada a transporte/locomocão;
+    - Economia relacionada a transporte/locomoção;
     </p>
     
     <p>
@@ -370,10 +444,12 @@ A primeira consulta será de AVALIAÇÃO e confirmação dos dados da anamnese, 
 </div> <!-- ✅ fecha aqui --> 
 
  <div class="card">
+   <h2>Aquisição de Fonemas</h2>
   <img src="aquisição.png" alt="idade x fonemas" class="imagem-card">
 </div>
 
   <div class="card">
+    <h2>Desenvolvimento das crianças</h2>
   <img src="desenvolvimento.png" alt="desenvolvimento de crianças" class="imagem-card">
 </div>
 
