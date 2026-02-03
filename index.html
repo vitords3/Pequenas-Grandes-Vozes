@@ -80,33 +80,6 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
-.modal-conteudo {
-  background: #ffffff;
-  max-width: 500px;
-  margin: 10% auto;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  position: relative;
-}
-
-.modal-conteudo img {
-  max-width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-.modal-conteudo h2 {
-  margin-bottom: 10px;
-  color: #2f7d6d; /* pode ajustar à paleta do site */
-}
-
-.modal-conteudo p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #444;
-}
-
 .fechar {
   position: absolute;
   top: 10px;
@@ -114,6 +87,52 @@
   font-size: 28px;
   cursor: pointer;
   color: #555;
+}
+.servicos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.servicos button {
+  background: #2f6f4e;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.servicos button:hover {
+  background: #245a3f;
+}
+    .perfil-texto {
+  max-width: 70%;
+}
+.perfil-texto p {
+  line-height: 1.6;
+}
+
+.modal-conteudo {
+  background: #ffffff;
+  max-width: 700px;
+  width: 90%;
+  margin: 6% auto;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.modal-conteudo h2 {
+  color: #2f6f4e;
+  margin-bottom: 15px;
+}
+
+.modal-conteudo p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
 }
 
 
@@ -136,7 +155,7 @@
     </p>
   </div>
 
-  <div class="card">
+ <div class="card">
   <div class="perfil">
     <img src="adriana.png" alt="Adriana Maria Gonçalves de Araujo">
     
@@ -162,6 +181,7 @@
     </div>
   </div>
 </div>
+
   
 
   <div class="card">
@@ -189,15 +209,18 @@
     </p>
   </div>
 <div class="card">
-    <h2>Áreas de Atendimento</h2>
+  <h2>Áreas de Atendimento</h2>
+
   <div class="servicos">
-  <button onclick="abrirModal('fono')">Fonoaudiologia Infantil</button>
-  <button onclick="abrirModal('caa')">Modelagem em CAA</button>
-  <button onclick="abrirModal('neuro')">Reabilitação Neurológica</button>
-  <button onclick="abrirModal('motricidade')">Motricidade Orofacial</button>
-  <button onclick="abrirModal('tvns')">TVNS</button>
-  <button onclick="abrirModal('mentoria')">Mentoria para estudantes e recém-formados</button>
-</div>
+    <button onclick="abrirModal('fono')">Fonoaudiologia Infantil</button>
+    <button onclick="abrirModal('caa')">Modelagem em CAA</button>
+    <button onclick="abrirModal('neuro')">Reabilitação Neurológica</button>
+    <button onclick="abrirModal('motricidade')">Motricidade Orofacial</button>
+    <button onclick="abrirModal('tvns')">TVNS</button>
+    <button onclick="abrirModal('mentoria')">Mentoria para estudantes e recém-formados</button>
+  </div>
+</div> <!-- ✅ fecha aqui -->
+
   <div class="card">
     <h2>Condições de Pagamento</h2>
     <p>PIX e cartões Visa e Mastercard (sem parcelamento).</p>
@@ -225,10 +248,11 @@
 
     <img id="modal-img" src="" alt="">
     <h2 id="modal-titulo"></h2>
-    <p id="modal-texto"></p>
+    <div id="modal-texto"></div>
   </div>
 </div>
-  <script>
+
+<script>
 function abrirModal(tipo) {
   const modal = document.getElementById("modal");
   const titulo = document.getElementById("modal-titulo");
@@ -236,11 +260,23 @@ function abrirModal(tipo) {
   const img = document.getElementById("modal-img");
 
   if (tipo === "fono") {
-    titulo.innerText = "Fonoaudiologia Infantil";
-    texto.innerText =
-      "Atendimento especializado no desenvolvimento da comunicação, fala e linguagem infantil, respeitando as necessidades de cada criança.";
-    img.src = "fono.jpg";
-  }
+  titulo.innerText = "Fonoaudiologia Infantil";
+  texto.innerHTML = `
+    <strong>Atraso e troca / omissões de sons na fala</strong><br><br>
+
+    Crianças com atraso e/ou troca de sons na fala necessitam de avaliação com o fonoaudiólogo.
+    É fundamental o diagnóstico precoce para iniciar a intervenção e evitar alterações que
+    possam prejudicar o desenvolvimento da criança.<br><br>
+
+    <strong>Algumas alterações que podem ser observadas:</strong><br>
+    <strong>Trocas:</strong> chave por save – janela por zanzela – casa por tasa<br>
+    <strong>Omissões:</strong> relógio por reiógio – pato por pato…<br><br>
+
+    <strong>Caso o seu filho não esteja falando procure imediatamente um fonoaudiólogo de confiança.</strong>
+  `;
+  img.src = "fono.jpg";
+}
+
 
   if (tipo === "caa") {
     titulo.innerText = "Modelagem em CAA";
@@ -283,6 +319,15 @@ function abrirModal(tipo) {
 function fecharModal() {
   document.getElementById("modal").style.display = "none";
 }
+
+const modal = document.getElementById("modal");
+
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    fecharModal();
+  }
+});
 </script>
+
 </body>
 </html>
