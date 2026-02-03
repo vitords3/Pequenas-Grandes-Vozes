@@ -141,14 +141,14 @@
   overflow: hidden;
 }
 
-/* imagem responsiva e controlada */
+/* TODAS AS IMAGENS COM MESMO TAMANHO */
 .banner img {
   width: 100%;
-  height: auto;          /* mantém proporção */
-  max-height: 260px;     /* 🔧 CONTROLA O TAMANHO */
-  object-fit: cover;     /* preenche sem distorcer */
+  height: 260px;        /* 🔒 ALTURA FIXA (todas iguais) */
+  object-fit: cover;   /* corta um pouco, mas mantém padrão */
   display: block;
 }
+
 
 /* texto sempre abaixo da imagem */
 .banner-texto {
