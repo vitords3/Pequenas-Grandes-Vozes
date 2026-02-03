@@ -145,7 +145,8 @@
 /* imagem ocupa o espaço inteiro */
 .banner img {
   width: 100%;
-  height: auto;          /* 🔑 remove altura fixa */
+  min-height: 260px;     /* 🔑 garante espaço pro texto */
+  object-fit: cover;
   display: block;
 }
 
@@ -156,7 +157,7 @@
   left: 0;
   width: 100%;
   padding: 18px 20px;
-  background: rgba(0, 0, 0, 0.55); /* fundo preto TRANSPARENTE */
+  background: rgba(0, 0, 0, 0.55); /* preto transparente */
   color: #fff;
   font-size: 15px;
   line-height: 1.6;
@@ -168,6 +169,13 @@
 .banner-texto p,
 .banner-texto strong {
   color: #fff;
+}
+    
+@media (max-width: 480px) {
+  .banner-texto {
+    font-size: 14px;
+    padding: 16px;
+  }
 }
 
   </style>
