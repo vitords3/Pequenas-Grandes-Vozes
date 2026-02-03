@@ -142,21 +142,21 @@
   overflow: hidden;
 }
 
-/* imagem cresce conforme o conteúdo */
+/* imagem ocupa o espaço inteiro */
 .banner img {
   width: 100%;
-  height: auto;        /* 🔑 MUITO IMPORTANTE */
+  height: auto;          /* 🔑 remove altura fixa */
   display: block;
 }
 
-/* texto SOBRE a imagem */
+/* texto POR CIMA da imagem */
 .banner-texto {
-  position: absolute;      /* 🔥 agora sim fica por cima */
-  left: 0;
+  position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.55); /* fundo escuro TRANSPARENTE */
+  padding: 18px 20px;
+  background: rgba(0, 0, 0, 0.55); /* fundo preto TRANSPARENTE */
   color: #fff;
   font-size: 15px;
   line-height: 1.6;
