@@ -137,25 +137,30 @@
 
 .banner {
   width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
+/* imagem livre, sem corte */
 .banner img {
   width: 100%;
-  height: auto;      /* imagem inteira */
-  border-radius: 12px;
+  height: auto;      /* 🔑 deixa a imagem crescer */
   display: block;
+  border-radius: 12px 12px 0 0;
 }
 
+/* texto abaixo da imagem */
 .banner-texto {
-  margin-top: 15px;
+  position: static; /* 🔑 remove o overlay */
   background: #2f6f4e;
   color: #fff;
-  padding: 18px 20px;
-  border-radius: 10px;
+  padding: 20px;
   font-size: 15px;
   line-height: 1.6;
 }
 
+/* garante texto branco */
+.banner-texto,
 .banner-texto p,
 .banner-texto strong {
   color: #fff;
