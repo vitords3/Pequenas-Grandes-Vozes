@@ -180,6 +180,12 @@
     position: relative; /* 🔑 texto vira parte do fluxo */
   }
 }
+    .imagem-card {
+  width: 100%;      /* ocupa toda a largura do card */
+  height: auto;     /* mantém proporção */
+  display: block;   /* remove espaços extras */
+  border-radius: 10px; /* bordas arredondadas do card */
+}
 
   </style>
 </head>
@@ -324,10 +330,8 @@ A primeira consulta será de AVALIAÇÃO e confirmação dos dados da anamnese, 
   </div>
 </div> <!-- ✅ fecha aqui --> 
 
-  <div class="card">
-  <div class="perfil">
-    <img src="aquisição.png" alt="idade x fonemas">
-  </div>
+ <div class="card">
+  <img src="aquisição.png" alt="idade x fonemas" class="imagem-card">
 </div>
 
 <div class="card">
